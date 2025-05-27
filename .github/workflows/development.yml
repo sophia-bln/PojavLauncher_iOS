@@ -120,8 +120,10 @@ jobs:
       - name: Install GNU Make
         run: brew install make
 
-      - name: Install full JDK 8 (Temurin)
+      - name: Get Dependencies for macos-runner
         run: |
+          brew install ldid
+          brew install make
           brew install --cask temurin@8
           echo "JAVA_HOME=$(/usr/libexec/java_home -v1.8)" >> $GITHUB_ENV
           echo "$(/usr/libexec/java_home -v1.8)/bin" >> $GITHUB_PATH
