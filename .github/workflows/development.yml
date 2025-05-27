@@ -117,7 +117,7 @@ jobs:
           path: depends
           workflow_conclusion: completed
           allow_forks: false
-          repo: sophia-bln/android-openjdk-build-multiarch/
+          repo: sophia-bln/android-openjdk-build-multiarch
           branch: jre17-21
           name: jre21-ios-aarch64
 
