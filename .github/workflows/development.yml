@@ -120,6 +120,12 @@ jobs:
       - name: Install GNU Make
         run: brew install make
 
+      - name: Set JAVA_HOME
+        run: |
+          echo "JAVA_HOME=$(pwd)/depends/jre8-ios-aarch64" >> $GITHUB_ENV
+          echo "$(pwd)/depends/jre8-ios-aarch64/bin" >> $GITHUB_PATH
+
+      
       - name: Build for ${{ matrix.platform_name }}
         env:
           password: ${{ secrets.ELLIE_MINI_SECRET }}
