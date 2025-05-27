@@ -117,6 +117,9 @@ jobs:
           branch: jre17-21
           name: jre21-ios-aarch64
 
+      - name: Install GNU Make
+        run: brew install make
+
       - name: Build for ${{ matrix.platform_name }}
         env:
           password: ${{ secrets.ELLIE_MINI_SECRET }}
