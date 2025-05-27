@@ -122,7 +122,7 @@ jobs:
 
       - name: Install full JDK 8 (Temurin)
         run: |
-          brew install --cask temurin8
+          brew install --cask temurin@8
           echo "JAVA_HOME=$(/usr/libexec/java_home -v1.8)" >> $GITHUB_ENV
           echo "$(/usr/libexec/java_home -v1.8)/bin" >> $GITHUB_PATH
 
