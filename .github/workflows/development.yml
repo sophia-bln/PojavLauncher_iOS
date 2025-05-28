@@ -117,6 +117,14 @@ jobs:
           branch: jre21
           name: jre21-ios-aarch64
 
+      - name: Get Dependencies for macos-runner
+        run: |
+          brew install ldid
+          brew install make
+          brew install --cask temurin@8
+          echo "JAVA_HOME=$(/usr/libexec/java_home -v1.8)" >> $GITHUB_ENV
+          echo "$(/usr/libexec/java_home -v1.8)/bin" >> $GITHUB_PATH
+
       - name: Build for ${{ matrix.platform_name }}
         env:
           password: ${{ secrets.ELLIE_MINI_SECRET }}
