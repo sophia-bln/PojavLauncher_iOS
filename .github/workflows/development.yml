@@ -18,12 +18,8 @@ jobs:
         include:
           - platform: 2
             platform_name: ios
-          - platform: 7
-            platform_name: iossimulator
-          - platform: 8
-            platform_name: tvossimulator
     
-    runs-on: MacStadium
+    runs-on: macos-latest
     steps:
       - name: Remove work folders
         env:
@@ -105,7 +101,7 @@ jobs:
           path: depends
           workflow_conclusion: completed
           allow_forks: false
-          repo: PojavLauncherTeam/android-openjdk-build-multiarch
+          repo: sophia-bln/android-openjdk-build-multiarch
           branch: buildjre17-21
           name: jre17-ios-aarch64
 
@@ -117,8 +113,8 @@ jobs:
           path: depends
           workflow_conclusion: completed
           allow_forks: false
-          repo: PojavLauncherTeam/android-openjdk-build-multiarch
-          branch: buildjre17-21
+          repo: sophia-bln/android-openjdk-build-multiarch
+          branch: jre21
           name: jre21-ios-aarch64
 
       - name: Build for ${{ matrix.platform_name }}
