@@ -114,11 +114,8 @@ jobs:
           workflow_conclusion: completed
           allow_forks: false
           repo: sophia-bln/android-openjdk-build-multiarch
-          branch: jre17-21
+          branch: jre21
           name: jre21-ios-aarch64
-
-      - name: Install GNU Make
-        run: brew install make
 
       - name: Get Dependencies for macos-runner
         run: |
